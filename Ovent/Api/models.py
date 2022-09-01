@@ -6,11 +6,4 @@ class Item(models.Model):
     description = models.TextField()
 
     params = models.TextField()
-    image = models.CharField(max_length=256)
-
-
-class SubItem(models.Model):
-    item = models.ManyToManyField(Item)
-
-    params = models.TextField()
-    image = models.CharField(max_length=256)
+    images = models.TextField()
