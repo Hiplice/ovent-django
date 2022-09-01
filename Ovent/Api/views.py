@@ -12,8 +12,7 @@ def get_product(request):
             data = {
                 'heading': db_data.heading,
                 'description': db_data.description,
-                'params': json.loads(db_data.params)['data'],
-                'image': db_data.image
+                'params': json.loads(db_data.params)['data']
             }
 
             return HttpResponse(json.dumps(data, ensure_ascii=False).encode('utf8'), content_type="application/json")

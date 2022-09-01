@@ -6,4 +6,3 @@ class Item(models.Model):
     description = models.TextField()
 
     params = models.TextField()
-    images = models.TextField()
