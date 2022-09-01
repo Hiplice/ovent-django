@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Ovent.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:\\Personal\\Projects\\ovent-django\\templates'], # '/home/d/domremg2/ovent/public_html/templates'
+        'DIRS': ['D:\\Personal\\Projects\\ovent-django\\templates', '/home/d/domremg2/ovent/public_html/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
