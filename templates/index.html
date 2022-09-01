@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        {% load static %}
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>gulp-scss-starter</title>
+        <meta name="theme-color" content="#fff">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <link rel="stylesheet" href="{% static 'site/styles/main.css' %}">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script type="text/javascript" src="https://raw.github.com/javanto/jquery-fileinput/3.1.0/dist/jquery.fileinput.min.js"></script>
+    </head>
+    <body>
+        <header class="header">
+    <div class="container">
+        <div class="header__container">
+            <a class="header__logo" href="#">ОВЕНТ</a>
+            <nav class="nav__header">
+                <a class="nav__item" href="#">Каталог</a>
+                <a class="nav__item" href="#">Галерея</a>
+                <a class="nav__item" href="#">Контакты</a>
+                <a class="nav__item spec" href="spec.html">Спец. двери</a>
+
+            </nav>
+
+            <a class="phone" href="#">
+                <span>+7 (495) 197-07-02</span>
+            </a>
+
+            <div class="close">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</header>
+        <!--Video-->
+<div class="header__video" id="d">
+    <div class="video__gradient"></div>
+    <video class="video" src="img/video_preview_h264.mp4" autoplay muted loop></video>
+    <div class="intro__container" >
+        <h3 class="intro__subtitle" >Противопожарные</h3>
+        <h1 class="intro__title" >Двери на заказ</h1>
+        <p class="intro__text" >Огонь не пройдет.<br/>Сохранение жизни – первоочередная задача всех и каждого.</p>
+        <a id="btn" class="btn" >Оставить заявку</a>
+    </div>
+</div>
+<!--End video-->
+        <div class="modal" id="modal">
+    <div class="modal__container" id="modal__container">
+        <div class="modal__header">
+            <h1 class="modal__title">Заказать обратный звонок</h1>
+            <div class="modal__close" id="modal__close">
+                <div class="close__x"></div>
+            </div>
+        </div>
+
+        <h3 class="modal__subtitle">Укажите свой номер и мы перезвоним вам в течение 5 минут!</h3>
+
+        <form class="modal__input">
+            <div>
+                <h3 class="modalInput__title">Укажите ваше имя:</h3>
+                <input class="input__call" placeholder="Имя" type="text">
+            </div>
+            <div>
+                <h3 class="modalInput__title">Укажите ваш телефон:</h3>
+                <input class="input__call" placeholder="+7 (xxx) xxx-xx-xx" type="tel">
+            </div>
+            <div>
+                <h3 class="modalInput__title">Техническое задание:</h3>
+                <div class="field__wrapper">
+
+                    <input name="file" type="file" name="file" id="field__file-2" class="field field__file" multiple>
+
+                    <label class="field__file-wrapper" for="field__file-2">
+                      <div class="field__file-fake">Файл не выбран
+
+                      </div>
+
+                      <!--<div style="cursor: pointer;" class="close__file" id="close__file"></div>-->
+                      <div class="field__file-button">Загрузить</div>
+
+                    </label>
+                 </div>
+            </div>
+            <div>
+                <h3 class="modalInput__title">Комментарий</h3>
+                <textarea class="input__call" placeholder="Комментарий"></textarea>
+            </div>
+            <div>
+                <input type="checkbox" class="check">
+                <span class="check__text">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных </span>
+            </div>
+
+        </form>
+        <button type="submit" class="btn">Оставить заявку</button>
+    </div>
+</div>
+        <div class="modalDoor" id="modal">
+    <div class="modalDoor__container" id="modal__container">
+        <div class="modal__header">
+            <h1 class="modal__title">техническая дверь</h1>
+            <div class="modal__close" id="modal__close-two">
+                <div class="close__x"></div>
+            </div>
+        </div>
+
+        <div>
+
+            <div class="my-shuffle-container">
+                <div class="picture-item" data-groups='["onestr"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/onestr.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,najimruch"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/onestr.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,najimruch,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 10.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,najimruch,sglass"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 9.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,najimruch,sglass,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 8.png"/>
+                    </div>
+                </div>
+
+                <div class="picture-item" data-groups='["onestr,najimruch,polos"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 33.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,najimruch,polos,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 16.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,najimruch,polos,sglass"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 14.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,najimruch,polos,sglass,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 15.png"/>
+                    </div>
+                </div>
+
+                <div class="picture-item" data-groups='["onestr,shtang"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 34.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,shtang,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 19.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,shtang,sglass"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 17.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["onestr,shtang,sglass,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/onestr/Group 18.png"/>
+                    </div>
+                </div>
+
+
+                <div class="picture-item" data-groups='["twostr"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/twostr.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,najimruch"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/twostr.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,najimruch,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 12.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,najimruch,sglass"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 3.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,najimruch,sglass,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 2.png"/>
+                    </div>
+                </div>
+
+                <div class="picture-item" data-groups='["twostr,najimruch,polos"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 35.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,najimruch,polos,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 10.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,najimruch,polos,sglass"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 4.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,najimruch,polos,sglass,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 5.png"/>
+                    </div>
+                </div>
+
+                <div class="picture-item" data-groups='["twostr,shtang"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 36.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,shtang,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 11.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,shtang,sglass"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 6.png"/>
+                    </div>
+                </div>
+                <div class="picture-item" data-groups='["twostr,shtang,sglass,ventilation"]'>
+                    <div class="aspect__inner">
+                        <img src="img/twostr/Group 7.png"/>
+                    </div>
+                </div>
+
+
+            </div>
+            <div>
+                <!--<button id='all'>All</button>-->
+                <div class="checkbtn">
+                    <input type="checkbox" checked id='btn-onestr' value="onestr"><label for="btn-onestr">Одностворчатая</label></input>
+                    <input type="checkbox" id='btn-twostr' value="twostr"><label for="btn-twostr">Двустворчатая</label></input>
+                </div>
+                <div class="checkbtn">
+                    <input type="checkbox" id='btn-najimruch' value="najimruch"><label for="btn-najimruch">Нажимная ручка</label></input>
+                    <input type="checkbox" id='btn-shtang' value="shtang"><label for="btn-shtang">Ручка-штанга</label></input>
+                    <input type="checkbox" id='btn-polos' value="polos"><label for="btn-polos">Отбойная полоса</label></input>
+                </div>
+                <div class="checkbtn">
+                    <input type="checkbox" id='btn-sglass' value="sglass"><label for="btn-sglass">С остеклением</label></input>
+                    <input type="checkbox" id='btn-ventilation' value="ventilation"><label for="btn-ventilation">С вентиляцией</label></input>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="main">
+    <div class="container">
+        <div class="container__list">
+        <!--Products-->
+        <div class="product">
+           <!--Product navigate-->
+           <div class="header__list">
+                <h4 class="title__list">Продукция</h4>
+                <nav class="nav">
+                    <a href="#" class="nav__item">Двери</a>
+                    <a href="#" class="nav__item">Ворота</a>
+                    <a href="#" class="nav__item">Люки</a>
+                    <a href="#" class="nav__item">Окна</a>
+                </nav>
+            </div>
+           <!--end product navigate-->
+
+            <div class="product__list">
+                <!--Product navigate-->
+                <div class="product__card ">
+                    <img class="product__img" src="https://legkovmeste.ru/wp-content/uploads/2019/01/post_5a75547fd9880.jpg">
+                    <h5 class="product__title">Квартирная дверь</h5>
+                    <a class="product__link" href="#">Подробнее</a>
+                </div>
+                <!--Product card-->
+                <!--Product navigate-->
+                <div class="product__card">
+                    <img class="product__img" src="https://legkovmeste.ru/wp-content/uploads/2019/01/post_5a75547fd9880.jpg">
+                    <h5 class="product__title">Квартирная дверь</h5>
+                    <a class="product__link" href="#">Подробнее</a>
+                </div>
+                <!--Product card-->
+                <!--Product navigate-->
+                <div class="product__card">
+                    <img class="product__img" src="https://legkovmeste.ru/wp-content/uploads/2019/01/post_5a75547fd9880.jpg">
+                    <h5 class="product__title">Квартирная дверь</h5>
+                    <a class="product__link" href="#">Подробнее</a>
+                </div>
+                <!--Product card-->
+                <!--Product navigate-->
+                <div class="product__card">
+                    <img class="product__img" src="https://legkovmeste.ru/wp-content/uploads/2019/01/post_5a75547fd9880.jpg">
+                    <h5 class="product__title">Противопожарная стеклянная дверь</h5>
+                    <a class="product__link" href="#">Подробнее</a>
+                </div>
+                <!--Product card-->
+            </div>
+
+            <a href="#" class="product__btn">Показать ещё</a>
+        </div>
+        <!--End product-->
+
+    </div>
+</section>
+<section class="section">
+        <div class="container">
+            <div class="container__list-two">
+                <!--Galery-->
+                <div class="galery">
+                    <!--galery navigate-->
+                        <div class="header__list">
+                            <h4 class="title__list">Галерея</h4>
+                        </div>
+                    <!--end galery navigate-->
+                    <div class="galery__list">
+                        <img class="galery__img" src="https://legkovmeste.ru/wp-content/uploads/2019/01/post_5a75547fd9880.jpg">
+                        <img class="galery__img" src="https://phonoteka.org/uploads/posts/2021-04/1618534523_18-p-fon-dver-19.jpg">
+                        <img class="galery__img" src="https://legkovmeste.ru/wp-content/uploads/2019/01/post_5a75547fd9880.jpg">
+                        <img class="galery__img" src="https://phonoteka.org/uploads/posts/2021-04/1618534523_18-p-fon-dver-19.jpg">
+                        <img class="galery__img" src="https://legkovmeste.ru/wp-content/uploads/2019/01/post_5a75547fd9880.jpg">
+                        <img class="galery__img" src="https://phonoteka.org/uploads/posts/2021-04/1618534523_18-p-fon-dver-19.jpg">
+                        <img class="galery__img" src="https://legkovmeste.ru/wp-content/uploads/2019/01/post_5a75547fd9880.jpg">
+                    </div>
+                </div>
+                <!--Galery end-->
+            </div>
+        </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="container__list-two">
+        <!--clients-->
+         <div class="clients">
+            <!--clients navigate-->
+                <div class="header__list">
+                    <h4 class="title__list">Наши клиенты</h4>
+                </div>
+            <!--end clients navigate-->
+
+            </div>
+        </div>
+    </div>
+            <div class="clients__logo">
+                <div class="slider">
+                    <img src="img/image 3.svg">
+                    <img src="img/image 5.svg">
+                    <img src="img/image 6.svg">
+                    <img src="img/image 7.svg">
+                    <img src="img/image 9.svg">
+                </div>
+                <div class="slider-rtl" dir="rtl">
+                    <img src="img/image 10.svg">
+                    <img src="img/logo-magnit 1.svg">
+                    <img src="img/pngwing 1.svg">
+                    <img src="img/pngwing 2.svg">
+                    <img src="img/pngwing 3.svg">
+                </div>
+            </div>
+
+</section>
+<section class="section">
+    <div class="container">
+        <div class="container__list-two">
+        <!--offer-->
+        <div class="offer">
+            <div class="container__offer">
+                <img class="offer__img" src="img/offer.svg">
+                <div class="offer__text">
+                    <h2 class="offer__title">Получите индивидуальное коммерческое предложение!</h2>
+                    <h4 class="offer__subtitle">Просто заполните форму и наш специалист перезвонит Вам в течении 5 минут!</h4>
+                    <a id="btn" class="btn">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <!--offer end-->
+
+        </div>
+    </div>
+</section>
+
+        <footer class="footer">
+    <div class="footer__container">
+        <div class="footer__contPrivacy">
+            <h1 class="footer__logo">ОВЕНТ</h1>
+            <p class="privacy__text">© 2022 Все права защищены ООО "ПК №1"</p>
+            <a href='#' class="privacy__text privacy__text-link">Политика конфиденциальности"</a>
+        </div>
+        <div class="footer__right">
+            <div class="time__container">
+                <div class="time__work">
+                    <h4 class="time__title">Режим работы</h4>
+                    <p>пн-пт: 9:00 - 20:00</p>
+                    <p>сб-вс: выходной</p>
+                </div>
+                <div class="time__work">
+                    <h4 class="time__title">Контакты</h4>
+                    <a href="mailto:info@ovent-snab.ru">info@ovent-snab.ru</a>
+                    <a href="tel:+7 (495) 197-07-02">+7 (495) 197-07-02</a>
+                </div>
+            </div>
+            <div class="map">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab7bbe0f09ee40cad929b6133634ba17f20255a5f99d79715d7002cf8a1b43580&amp;width=100%&amp;height=224&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js"></script>
+
+        <script src="js/main.js"></script>
+        <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    </body>
+</html>
